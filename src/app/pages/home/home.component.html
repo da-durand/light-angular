@@ -1,0 +1,24 @@
+<div class="lights" style="background-color: beige;">
+    <h1 class="text-center">Mes belles ampoules</h1>
+    <div class="text-center">
+        <a routerLink="lights/create" type="button" class="btn btn-primary btn-newlight text-white" data-toggle="modal" data-target="#newlight">
+            Ajouter une ampoule
+        </a>
+    </div>
+    <div class="d-flex justify-content-between px-5">
+        <button class="px-3 py-2 btn-warning on-all">
+            ALL ON
+        </button>
+        <button class="px-3 py-2 btn-dark off-all">
+            ALL OFF
+        </button>
+    </div>
+
+    <div class='row list'>
+        <div *ngFor="let light of lights" class='col-2 p-4 light-container text-center d-flex flex-column'
+            id='container-{{light.id}}'>
+            <app-light [light]="light"></app-light>
+        </div>
+
+    </div>
+</div>

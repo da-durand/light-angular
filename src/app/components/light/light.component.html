@@ -1,0 +1,15 @@
+<div class="border py-1 px-1" style="background-color: rgb(248, 237, 225);">
+  <fa-icon [icon]="['fas', 'lightbulb']" [style.color]="light.activate ? light.color : 'black'" style="font-size: 5em;">
+  </fa-icon>
+  <div class='btn-container d-flex justify-content-between'>
+    <input class='light-button btn btn-dark text-white' type="button" (click)="updateState()"
+      [value]="light.activate ? 'ON' : 'OFF'">
+    <button (click)='openEditModal()' type="button" data-id="{{light.id}}" class="btn btn-primary btn-edit"
+      data-toggle="modal" data-target="#newlight" style=" background-color: {{light.color}}">
+      Couleur
+    </button>
+  </div>
+  <button class='delete-button btn btn-danger text-white' (click)='delete()'>
+    supprimer
+  </button>
+</div>

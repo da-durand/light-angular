@@ -1,0 +1,13 @@
+
+<a class="btn btn-primary" routerLink="" *ngIf='!light'>Accueil</a>
+<form [formGroup]="createLight" (ngSubmit)="onSubmit(createLight.value)">
+    <label>
+        Couleur
+        <input type="text" formControlName="color">
+    </label>
+    <label *ngIf='!light'>
+        Allumée
+        <input type="checkbox" formControlName="activate">
+    </label>
+    <button class="button" type="submit">{{ light ? 'Editer' : 'Créer' }}</button>
+</form>
